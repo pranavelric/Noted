@@ -1,0 +1,60 @@
+@use '../../styles/scss/' as *;
+
+
+.texted-button{
+    @include flex(center,center);
+    flex-shrink: 0;
+    color: #2d3748;
+    font-weight: 700;
+    padding: 0.25rem 1rem;
+    background-color: #edf2f7;
+  
+    &:hover{
+       background-color: rgba(237, 242, 247, 1);      
+    }
+
+}
+
+
+
+.button{
+    position: relative;
+    @include flex(center,center);
+    flex-shrink: 0;
+    border-radius: 9999px;
+    background-color: white;
+    border: none;
+    
+    &:hover{
+        background-color: rgba(237, 242, 247, 1);      
+   
+
+    }
+ 
+     .btn-child{
+        position: relative;
+        margin-left: auto;
+
+        border-radius: 0.25rem;
+        background-color: #4a5568;
+        color: white;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        // transform: translateX(0) scaleX(0) scaleY(1);
+        padding: 0.25rem 1rem;
+
+        
+     }
+    
+}
+  
+.h-8{
+    height: 2rem;
+}
+.h-10{
+    height: 2.5rem;
+}
+.w-10{
+    width: 2.5rem;
+}
+  
