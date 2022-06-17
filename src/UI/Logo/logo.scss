@@ -1,0 +1,21 @@
+@use '../../styles/scss/' as *;
+
+
+.logo{
+    @include flex(center,center);
+    align-self: center;
+
+
+.logo-img{
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: 0.5rem;
+}
+span{
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: #2d3748;
+
+}
+
+}

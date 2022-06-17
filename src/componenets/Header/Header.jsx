@@ -7,6 +7,7 @@ import Button from '../../UI/Button/Button';
 import SearchBar from './SearchBar/SearchBar';
 import Options from './options/Options';
 import './header.scss';
+import Logo from '../../UI/Logo/Logo';
 
 
 export default function Header(props) {
@@ -22,15 +23,17 @@ export default function Header(props) {
             >
                 <BsList size="1.5em"/>     
             </Button>
-            {/* logo */}
+      
+ 
             </div>
+
+            <Logo name="Noted"/>
             
         <SearchBar
           isFocused
           classes="search-bar"
         />
         <Options/>
-                        {/* options here */}
         </div>
         
 
