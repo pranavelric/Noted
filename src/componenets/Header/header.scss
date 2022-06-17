@@ -1,0 +1,116 @@
+@use '../../styles/scss/' as *;
+
+// can be used as default
+.relative{
+    position: relative;
+}
+
+.border-b{
+    border-bottom-width: 1px;
+}
+
+.border-gray-300 {
+    $border-opacity: 1;
+    border-color: #e2e8f0;
+    border-color: rgba(226, 232, 240, $border-opacity);
+}
+
+.mr-2{
+    margin-right: 0.5rem;
+}
+
+.shadow {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+
+// Header
+
+.header-content{
+    @include flex(stretch,space-between);
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    
+}
+
+.menu-button{
+    align-self: center;
+}
+
+// SearchBar
+
+.search-bar{
+    align-self: center;
+    flex:1;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+
+.searchbar-content{
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+
+    border-radius: 10px;
+    box-shadow:  1px 2px 3px 0px rgb(0 0 0 / 10%), -3px -2px 14px 0 rgb(0 0 0 / 6%);
+    input{
+        flex: 1;
+        background-color: transparent;
+        border:none;
+
+        outline:none;
+        
+        margin-left: 0.5rem;
+    }
+}
+
+.hidden{
+    display: none;
+}
+
+
+.bg-white{
+    background-color: white;
+}
+
+.bg-gray-300 {
+    $bg-opacity: 1;
+    background-color: #e2e8f0;
+    background-color: rgba(226, 232, 240, $bg-opacity);
+  }
+
+
+  
+  .text-gray-600 {
+    $text-opacity: 1;
+    color: #2d3748;
+    color: rgba(45, 55, 72, $text-opacity);
+  }
+.text-gray-800 {
+    $text-opacity: 1;
+    color: #2d3748;
+    color: rgba(45, 55, 72, $text-opacity);
+  }
+
+
+
+//   options
+.options{
+    :nth-child(even){
+        margin:0 0.5rem;
+    }
+
+}
