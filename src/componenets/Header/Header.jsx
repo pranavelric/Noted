@@ -12,8 +12,8 @@ import './header.scss';
 export default function Header(props) {
     const {selectedNotes} = useContext(KeepContext);
     return (
-    <div className="relative border-b border-gray-300 shadow">
-        <div className="header-content py-2 px-4">
+    <div className="header">
+        <div className="header-content">
             <div className="menu-button">
             <Button
             classes="mr-2"
@@ -51,15 +51,15 @@ export default function Header(props) {
                 }}
                 >
 
-                <div className="absolute flex px-4 items-center top-0 w-full h-full z-10 bg-white transform transition transition-transform ease-in-out duration-75">
-                    <div className="flex items-center text-gray-600">
+                <div className="selected-notes">
+                    <div className="text-gray-600">
                     {/* <Button clicked={clearSelectedNotes}> */}
                         {/* <FaTimes size="1.5em" />
                     </Button> */}
                     <span className="ml-8 text-xl">
                         {selectedNotes.length > 1
-                        ? `${selectedNotes.length} éléments sélectionnés`
-                        : `${selectedNotes.length} élément sélectionné`}
+                        ? `${selectedNotes.length} elements selected`
+                        : `${selectedNotes.length} element selected`}
                     </span>
                     </div>
                 </div>

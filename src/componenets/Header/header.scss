@@ -1,35 +1,17 @@
 @use '../../styles/scss/' as *;
 
-// can be used as default
-.relative{
-    position: relative;
-}
-
-.border-b{
-    border-bottom-width: 1px;
-}
-
-.border-gray-300 {
-    $border-opacity: 1;
-    border-color: #e2e8f0;
-    border-color: rgba(226, 232, 240, $border-opacity);
-}
-
-.mr-2{
-    margin-right: 0.5rem;
-}
-
-.shadow {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-}
-
 
 // Header
-
+.header{
+    position: relative;
+    border-bottom-width: 1px;
+}
 .header-content{
     @include flex(stretch,space-between);
     padding: 0.5rem 1rem 0.5rem 1rem;
-    
+    border-color: #e2e8f0;
+    margin-right: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .menu-button{
@@ -43,6 +25,12 @@
     flex:1;
     margin-left: 10%;
     margin-right: 10%;
+
+    @include mobile{
+        .hidden{
+            display: none;
+        }
+    }
 }
 
 
@@ -77,40 +65,55 @@
     }
 }
 
-.hidden{
-    display: none;
-}
+// .hidden{
+//     display: none;
+// }
 
-
-.bg-white{
-    background-color: white;
-}
-
-.bg-gray-300 {
-    $bg-opacity: 1;
-    background-color: #e2e8f0;
-    background-color: rgba(226, 232, 240, $bg-opacity);
-  }
-
-
-  
-  .text-gray-600 {
-    $text-opacity: 1;
+.text-gray-600 {
     color: #2d3748;
-    color: rgba(45, 55, 72, $text-opacity);
+    color: rgba(45, 55, 72,1);
   }
 .text-gray-800 {
-    $text-opacity: 1;
     color: #2d3748;
-    color: rgba(45, 55, 72, $text-opacity);
+    color: rgba(45, 55, 72, 1);
   }
 
 
 
 //   options
 .options{
+    @include flex(center,center);
+
     :nth-child(even){
         margin:0 0.5rem;
     }
 
 }
+
+.selected-notes{
+    position: absolute;
+    @include flex(center,center);
+    padding: 0 1rem;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: white;
+    transform: scaleX(1) scaleY(1);
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 75ms;
+
+    &div{
+        @include flex(center,center);
+    
+    
+        &span{
+            margin-left: 2rem;
+            font-size: 1.25rem;
+        }
+
+    }
+
+}
+
