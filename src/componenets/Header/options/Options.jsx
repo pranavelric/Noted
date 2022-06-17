@@ -4,6 +4,8 @@ import { BsGrid3X3Gap } from 'react-icons/bs';
 import { FaCog } from 'react-icons/fa';
 import KeepContext from './../../../context/KeepContext';
 import Button from './../../../UI/Button/Button';
+import Avatar from '../../../UI/Avatar/Avatar';
+import profilePic from '../../../static/profile.png';
 
 export default function Options() {
     const { grid, switchLayout } = useContext(KeepContext);
@@ -20,7 +22,8 @@ export default function Options() {
           <FaCog size="1.5em" />
         </Button>
   
-        {/* <Avatar imgSrc={profileImg} /> */}
+        <Avatar imgSrc={profilePic} />
+
       </div>
   )
 }
