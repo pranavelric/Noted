@@ -31,9 +31,7 @@ export default function Button({title,altText,children,classes,clicked,texted,sm
               {children}
               {altText && hovered && (
                 <div
-                  className={`${
-                    small ? 'mt-8' : 'mt-10'
-                  } btn-child`}
+                  className={`btn-child`}
                 >
                   {altText}
                 </div>
