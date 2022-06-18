@@ -1,0 +1,55 @@
+@use '../../styles/scss/' as *;
+
+
+
+.title-btn-root{
+    
+    color:$text-gray-800;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 1000ms;
+    
+}
+
+.titled-btn{
+    @include flex(center,flex-start);
+    border: none;
+    background-color: white;
+    height: 3rem;
+
+    margin: 0.25rem 0;
+    &:hover{
+        background-color: $bg-gray-300;
+    }
+
+
+}
+
+.title-btn-expanded{
+    padding: 0 1.25rem;
+    width: 100%;
+
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+
+}
+.title-btn-not-expanded{
+    justify-content: center;
+    width: 3rem;
+    border-radius: 999px;
+}
+.title-btn-active{
+    background-color: $bg-orange-300;
+}
+
+
+
+.title-btn-label{
+    margin-left: 0.75rem;
+    flex-grow: 1;
+    font-weight: 600;
+    text-align: left;
+    font-size: 0.875rem;
+    
+}
