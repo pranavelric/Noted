@@ -17,7 +17,7 @@ export default function SearchBar({classes,isFocused}) {
     isFocused? 'bg-white':'bg-gray-300'
     } bg-transparent`}
     >
-        <div>
+        <div className='search-btn'>
         <BsSearch className="text-gray-600" size="1.2em" />
         </div>
 
