@@ -29,13 +29,13 @@ export default function Button({title,altText,children,classes,clicked,texted,sm
               onMouseLeave={handleHover}
             >
               {children}
-              {altText && hovered && (
+              {/* {altText && hovered && (
                 <div
                   className={`btn-child`}
                 >
                   {altText}
                 </div>
-              )}
+              )} */}
             </button>
           );
 

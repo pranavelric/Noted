@@ -27,7 +27,7 @@ export default function Header(props) {
  
             </div>
 
-            <Logo name="Noted"/>
+            <Logo name={props.name}/>
             
         <SearchBar
           isFocused
