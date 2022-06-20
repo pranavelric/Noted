@@ -23,7 +23,7 @@ export default function SearchBar({classes,isFocused}) {
 
         <input
           type="text"
-          className="hidden"
+          className=""
           placeholder="search"
         />
 
