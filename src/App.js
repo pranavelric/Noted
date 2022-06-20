@@ -214,7 +214,7 @@ function App(props) {
   };
 
   useEffect(() => {
-    let labelPathPatern = /\/Noted\/label\/(.+)/;
+    let labelPathPatern = /\/label\/(.+)/;
     let isMatch = props.location.pathname.match(labelPathPatern);
     if (isMatch) {
       let name = isMatch[1];

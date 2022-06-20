@@ -44,14 +44,16 @@ export default function NoteForm({classes,isTyping,clicked,endTyping}) {
     };
 
     const handleCloseForm = ()=>{
-        saveNote();
-        setBgColor('bg-white');
         endTyping();
+        saveNote();
+        setContent('');
+        setTitle('');
+        setBgColor('bg-white');
     }
     
     const saveNote = ()=>{
         addNote({
-            title,content,selectedLabels,bgColor,archived,deleted:false,
+            title,content,selectedLabels,bgColor,archived,deleted:false,pinned:false
         });
     };
 

@@ -18,7 +18,7 @@ export default function Checkmark({ clicked, altText, checked }) {
 
     return (
         <button
-        className={`checkmark${
+        className={`checkmark ${
           checked ? ' text-white' : ' text-gray-600'
         }`}
         onClick={clicked}

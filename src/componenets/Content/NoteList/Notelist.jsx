@@ -13,7 +13,7 @@ function Notelist({ classes, location })
         ...notes.filter(note => !note.archived && !note.deleted),
     ];
 
-    let labelPathPatern = /\/Noted\/label\/(.+)/;
+    let labelPathPatern = /\/label\/(.+)/;
     let isMatch = location.pathname.match(labelPathPatern);
     if (isMatch) {
         filteredNotes = [...notes].filter(
@@ -21,7 +21,7 @@ function Notelist({ classes, location })
         );
     }
     
-    if(location.pathname==='/Noted/home'){
+    if(location.pathname==='/home'){
         filteredNotes = [...notes].filter(
           note => !note.deleted,
           );
@@ -42,7 +42,7 @@ function Notelist({ classes, location })
   let archivedNotes = [];
   let archivedExists = false;
 
-  let archivePathPatern = /\/Noted\/archive/;
+  let archivePathPatern = /\/archive/;
   let isArchive = location.pathname.match(archivePathPatern);
   if (isArchive) {
     pinnedExists = false;
@@ -59,7 +59,7 @@ function Notelist({ classes, location })
 
 
 
-  let trashPathPatern = /\/Noted\/trash/;
+  let trashPathPatern = /\/trash/;
   let isTrash = location.pathname.match(trashPathPatern);
   if (isTrash) {
     archivedExists = false;
