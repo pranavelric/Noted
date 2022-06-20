@@ -75,7 +75,7 @@ function SideBar({classes,isExpanded,location}) {
 
           <Link to="/trash">
             <TitledButton
-              label="Corbeille"
+              label="Trash"
               isExpanded={isExpanded}
               isActive={isActive('/trash') ? true : false}
             >
