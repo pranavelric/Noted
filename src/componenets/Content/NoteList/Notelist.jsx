@@ -22,7 +22,9 @@ function Notelist({ classes, location })
     }
     
     if(location.pathname==='/home'){
-        filteredNotes = [...notes];
+        filteredNotes = [...notes].filter(
+          note => !note.deleted,
+          );
     }
 
     
