@@ -1,0 +1,31 @@
+@use '../../../styles/scss/' as *;
+
+.create_label_root{
+ 
+    @include flex(center,flex-start);
+
+    
+}
+
+.create_label_inputs{
+    font-size: 0.75rem;
+    color:$bg-gray-700;
+    padding: 0.5rem 1rem;
+    flex-grow: 1;
+ 
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    border-radius: 10px;
+    box-shadow:  1px 2px 3px 0px rgb(0 0 0 / 10%), -3px -2px 14px 0 rgb(0 0 0 / 6%);
+    input{
+        flex: 1;
+        width: 100%;
+        background-color: transparent;
+        border:none;
+        outline:none;
+    }
+
+
+}
