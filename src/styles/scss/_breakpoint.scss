@@ -11,3 +11,16 @@
         @content;
     }
 }
+
+@mixin small_device {
+    @media only screen and(max-width:vars.$xs-width){
+        @content;
+    }
+}
+
+
+@mixin large_device {
+    @media only screen and(min-width:vars.$lg-width){
+        @content;
+    }
+}
