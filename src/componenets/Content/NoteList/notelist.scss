@@ -1,0 +1,153 @@
+@use '../../../styles/scss/' as *;
+
+
+.pinned_note_label_root{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    div{
+        
+        padding: 0 1rem;
+        font-size: 0.95rem;
+        color: $bg-gray-600;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+.pinned_note_large{
+    max-width: 42rem;    
+}
+
+
+.pinned_note_grid_content{
+    display: grid;
+    grid-column: 1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+
+
+    @include mobile{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include tablet{    
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include small_device{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    @include large_device{
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+
+
+
+}
+
+
+.other_notes{
+
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 1rem;
+
+
+    div{
+            padding: 0 1rem;
+            font-size: 0.95rem;
+            color: $bg-gray-600;
+            font-weight: 700;
+            text-transform: uppercase;
+    }
+}
+
+.other_note_max_width{
+    max-width: 42rem;
+}
+
+
+
+
+.filtered_notes_grid{
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  grid-gap: 0.5rem;
+    gap: 0.5rem;
+
+
+    @include mobile{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include tablet{    
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include small_device{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    @include large_device{
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+
+}
+
+
+.non_filetered_notes{
+    @include flex(center,center);
+    height: 100%;
+
+}
+.non_filtered_notes_content{
+    text-align: center;
+    @include flex(center,center);
+    flex-direction: column;
+    
+}
+
+.note_archive{
+    width: 100%;
+    margin: 1rem auto 0 auto;
+    div{
+        
+        padding: 0 1rem;
+        font-size: 0.95rem;
+        color: $bg-gray-600;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+.note_archive_large{
+    max-width: 42rem;
+}
+
+.note_archive_grid{
+    display: grid;
+    grid-column: 1;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
+
+    @include mobile{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @include tablet{    
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include small_device{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    @include large_device{
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+
+
+}
