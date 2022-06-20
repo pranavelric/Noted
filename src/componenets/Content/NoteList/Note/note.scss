@@ -1,0 +1,100 @@
+@use '../../../../styles/scss/' as *;
+
+
+.note_root{
+
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    max-width: 42rem;
+    border-radius: 0.75rem;
+    
+    &:hover{
+     box-shadow: $shadow;
+    }
+}
+
+.note_checkmark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: -0.75rem;
+    margin-top: -0.75rem;
+
+}
+
+
+.note_content_root{
+    border-radius: 0.75rem;
+    padding: 1rem;
+
+    &:hover{
+        box-shadow: $shadow;
+    }
+
+    &.note_content_root_selected{
+            border: 2px solid $bg-gray-800;
+    }
+    &.note_content_root_deselected{
+        border: 2px solid $bg-gray-200;
+
+    }
+}
+
+.note_pin{
+
+        @include flex(flex-start,flex-start);
+        word-wrap: anywhere;
+
+
+    span{
+        flex-grow: 1;
+        margin-right: 0.5rem;
+        font-size: $small-font-size;
+        font-weight: 600;
+        color: $bg-gray-600;
+    }
+}
+
+.note_content{
+    font-size: $small-font-size;
+    margin-bottom: 0.5rem;
+    span{
+        width: 100%;
+        color: $bg-gray-600;
+    }
+}
+
+
+.note_selected_labels{
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+    
+        li{
+            display: flex;
+            margin-right: 0.5rem;
+        }
+
+    }
+}
+
+.note_utils{
+
+    @include flex(center,flex-start);
+    flex-wrap: wrap;
+
+
+    &.note_utils_selected{
+            opacity: 1;
+    }
+    &.note_utils_deselected{
+        opacity: 0;
+    }
+
+
+}
