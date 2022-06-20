@@ -1,87 +1,83 @@
 // import logo from './logo.svg';
-import './styles/App.scss';
+import "./styles/App.scss";
 
-import React, {useState,useEffect} from 'react';
-// import {withRouter} from 'react-router-dom';
-import KeepContext from './context/KeepContext';
-import Header from './componenets/Header/Header';
-import SideBar from './componenets/SideBar/SideBar';
-import {withRouter} from './utils/withRouter';
-import Content from './componenets/Content/Content';
-import Modal from './componenets/Modal/Modal';
+import React, { useState, useEffect } from "react";
+import KeepContext from "./context/KeepContext";
+import Header from "./componenets/Header/Header";
+import SideBar from "./componenets/SideBar/SideBar";
+import { withRouter } from "./utils/withRouter";
+import Content from "./componenets/Content/Content";
+import Modal from "./componenets/Modal/Modal";
 
 function App(props) {
-
-  const [edit,setEdit] = useState(false);
+  const [edit, setEdit] = useState(false);
   const [grid, setGrid] = useState(false);
   const [selectedNotes, setSelectedNotes] = useState([]);
-  const [labels, setLabels] = useState(['javascript', 'Projects', 'css']);
+  const [labels, setLabels] = useState(["javascript", "Projects", "css"]);
   const [notes, setNotes] = useState([
     {
       id: 1,
-      title: 'Note in next label',
-      content: 'this not is for testing purpose',
-      selectedLabels: ['javascript', 'css'],
-      bgColor: 'bg-white',
+      title: "Note in next label",
+      content: "this not is for testing purpose",
+      selectedLabels: ["javascript", "css"],
+      bgColor: "bg-white",
       archived: false,
       deleted: false,
       pinned: false,
     },
     {
       id: 2,
-      title: 'This is an archive note',
-      content: 'this not is for testing archive note',
-      selectedLabels: ['javascript', 'css'],
-      bgColor: 'bg-white',
+      title: "This is an archive note",
+      content: "this not is for testing archive note",
+      selectedLabels: ["javascript", "css"],
+      bgColor: "bg-white",
       archived: true,
       deleted: false,
       pinned: false,
     },
     {
       id: 3,
-      title: 'This is a pinned notet',
-      content: 'this not is for testing archive note',
-      selectedLabels: ['javascript', 'css'],
-      bgColor: 'bg-green-300',
+      title: "This is a pinned notet",
+      content: "this not is for testing archive note",
+      selectedLabels: ["javascript", "css"],
+      bgColor: "bg-green-300",
       archived: false,
       deleted: false,
       pinned: true,
     },
   ]);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
-
-  const handleExpandSidebar = ()=>{
+  const handleExpandSidebar = () => {
     setIsExpanded(!isExpanded);
-  }
+  };
 
-  const editLabel = (oldLabel,newLabel)=>{
-    const newLabels = [...labels].map(label =>{
-      if(label===oldLabel){
-          return newLabel;
+  const editLabel = (oldLabel, newLabel) => {
+    const newLabels = [...labels].map((label) => {
+      if (label === oldLabel) {
+        return newLabel;
       }
       return label;
-
     });
 
     setLabels(newLabels);
     setNotes(
-      [...notes].map(n=>{
+      [...notes].map((n) => {
         return {
           ...n,
-          selectedLabels: n.selectedLabels.map(l=>{
-            if(l===oldLabel){
+          selectedLabels: n.selectedLabels.map((l) => {
+            if (l === oldLabel) {
               return newLabel;
             }
             return l;
           }),
         };
-      }),
+      })
     );
   };
 
-  const addLabel = label => {
+  const addLabel = (label) => {
     setLabels([...labels, label]);
   };
 
@@ -97,10 +93,9 @@ function App(props) {
     setEdit(false);
   };
 
-  
   const selectLabel = (noteId, labels) => {
     let updateNotes = [...notes];
-    let noteIndex = updateNotes.findIndex(n => n.id === noteId);
+    let noteIndex = updateNotes.findIndex((n) => n.id === noteId);
     if (noteIndex !== -1) {
       let note = updateNotes[noteIndex];
       note.selectedLabels = labels;
@@ -111,7 +106,7 @@ function App(props) {
 
   const selectBg = (noteId, color) => {
     let updateNotes = [...notes];
-    let noteIndex = updateNotes.findIndex(n => n.id === noteId);
+    let noteIndex = updateNotes.findIndex((n) => n.id === noteId);
     if (noteIndex !== -1) {
       let note = updateNotes[noteIndex];
       note.bgColor = color;
@@ -120,9 +115,9 @@ function App(props) {
     setNotes(updateNotes);
   };
 
-  const pinnedNote = noteId => {
+  const pinnedNote = (noteId) => {
     let updateNotes = [...notes];
-    let noteIndex = updateNotes.findIndex(n => n.id === noteId);
+    let noteIndex = updateNotes.findIndex((n) => n.id === noteId);
     if (noteIndex !== -1) {
       let note = updateNotes[noteIndex];
       note.pinned = !note.pinned;
@@ -132,10 +127,9 @@ function App(props) {
     setNotes(updateNotes);
   };
 
-
-  const archiveNote = noteId => {
+  const archiveNote = (noteId) => {
     let updateNotes = [...notes];
-    let noteIndex = updateNotes.findIndex(n => n.id === noteId);
+    let noteIndex = updateNotes.findIndex((n) => n.id === noteId);
     if (noteIndex !== -1) {
       let note = updateNotes[noteIndex];
       note.archived = true;
@@ -144,9 +138,9 @@ function App(props) {
 
     setNotes(updateNotes);
   };
-  const unArchiveNote = noteId => {
+  const unArchiveNote = (noteId) => {
     let updateNotes = [...notes];
-    let noteIndex = updateNotes.findIndex(n => n.id === noteId);
+    let noteIndex = updateNotes.findIndex((n) => n.id === noteId);
     if (noteIndex !== -1) {
       let note = updateNotes[noteIndex];
       note.archived = false;
@@ -155,10 +149,9 @@ function App(props) {
     setNotes(updateNotes);
   };
 
-
-  const deleteNote = noteId => {
+  const deleteNote = (noteId) => {
     setNotes([
-      ...notes.map(n => {
+      ...notes.map((n) => {
         if (n.id === noteId) {
           return {
             ...n,
@@ -171,9 +164,9 @@ function App(props) {
     ]);
   };
 
-  const restoreNote = noteId => {
+  const restoreNote = (noteId) => {
     setNotes([
-      ...notes.map(n => {
+      ...notes.map((n) => {
         if (n.id === noteId) {
           return {
             ...n,
@@ -186,99 +179,90 @@ function App(props) {
     ]);
   };
 
-
-  const hardDeleteNote = noteId => {
-    setNotes([...notes.filter(n => n.id !== noteId)]);
+  const hardDeleteNote = (noteId) => {
+    setNotes([...notes.filter((n) => n.id !== noteId)]);
   };
 
   const clearSelectedNotes = () => {
     setSelectedNotes([]);
   };
 
-
-
-  const selectNote = noteId => {
-    let noteIndex = selectedNotes.findIndex(id => id === noteId);
+  const selectNote = (noteId) => {
+    let noteIndex = selectedNotes.findIndex((id) => id === noteId);
     if (noteIndex !== -1) {
-      setSelectedNotes([...selectedNotes].filter(id => id !== noteId));
+      setSelectedNotes([...selectedNotes].filter((id) => id !== noteId));
     } else {
       setSelectedNotes([...selectedNotes, noteId]);
     }
   };
 
-  const deleteLabel = label => {
-    setLabels([...labels.filter(l => l !== label)]);
+  const deleteLabel = (label) => {
+    setLabels([...labels.filter((l) => l !== label)]);
     setNotes(
-      [...notes].map(n => {
+      [...notes].map((n) => {
         return {
           ...n,
-          selectedLabels: n.selectedLabels.filter(l => l !== label),
+          selectedLabels: n.selectedLabels.filter((l) => l !== label),
         };
-      }),
+      })
     );
   };
 
-
-  
-  const addNote = note => {
+  const addNote = (note) => {
     note.id = notes.length + 1;
     setNotes([...notes, note]);
   };
 
-
-  useEffect(()=>{
-    let labelPathPatern = /\/label\/(.+)/;
+  useEffect(() => {
+    let labelPathPatern = /\/Noted\/label\/(.+)/;
     let isMatch = props.location.pathname.match(labelPathPatern);
-    if(isMatch){
+    if (isMatch) {
       let name = isMatch[1];
-      name = name.charAt(0).toUpperCase()+name.substring(1);
+      name = name.charAt(0).toUpperCase() + name.substring(1);
       setName(name);
-    }else{
-      setName('');
+    } else {
+      setName("");
     }
-  },[props.location.pathname]);
-
+  }, [props.location.pathname]);
 
   return (
     <KeepContext.Provider
-    
-    value = {{
-      grid,
-      labels,
-      addLabel,
-      editLabel,
-      deleteLabel,
-      selectLabel,
-      notes,
-      deleteNote,
-      addNote,
-      selectNote,
-      selectedNotes,
-      clearSelectedNotes,
-      selectBg,
-      switchLayout:switchToGridLayout,
-      startEdit,
-      endEdit,
-      archiveNote,
-      unArchiveNote,
-      pinnedNote,
-      hardDeleteNote,
-      restoreNote
-    }}
+      value={{
+        grid,
+        labels,
+        addLabel,
+        editLabel,
+        deleteLabel,
+        selectLabel,
+        notes,
+        deleteNote,
+        addNote,
+        selectNote,
+        selectedNotes,
+        clearSelectedNotes,
+        selectBg,
+        switchLayout: switchToGridLayout,
+        startEdit,
+        endEdit,
+        archiveNote,
+        unArchiveNote,
+        pinnedNote,
+        hardDeleteNote,
+        restoreNote,
+      }}
     >
+      <div className="home-screen">
+        <Header expandSidebar={handleExpandSidebar} name={name}></Header>
+        <main className="main-content">
+          <SideBar
+            classes={`${isExpanded ? "sidebar" : ""} pt-4 shadow`}
+            isExpanded={isExpanded}
+          />
 
-    <div className="home-screen">
-
-      <Header expandSidebar={handleExpandSidebar} name={name}></Header>
-      <main className='main-content'>
-      <SideBar classes={`${isExpanded? 'sidebar':''} pt-4 shadow`}
-        isExpanded= {isExpanded}
-      />
-
-      <Content/>
-      </main>
-      {edit && <Modal />}
-    </div>
+          <Content />
+        </main>
+        {edit && <Modal />}
+      </div>
     </KeepContext.Provider>
   );
 }

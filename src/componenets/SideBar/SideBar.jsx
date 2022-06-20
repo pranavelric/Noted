@@ -22,17 +22,17 @@ function SideBar({classes,isExpanded,location}) {
       <div className={classes}>
         <div className="sidebar-content">
           <div>
-            <Link to="/home">
+            <Link to="/Noted/home">
               <TitledButton
               label="Note"
               isExpanded={isExpanded}
-              isActive = {isActive('/home')?true:false}
+              isActive = {isActive('/Noted/home')?true:false}
               >
                 <MdLightbulbOutline size="1.5em"/>
               </TitledButton>
             </Link>
 
-            <Link to="/reminders">
+            <Link to="/Noted/reminders">
             <TitledButton
               label="Reminders"
               isExpanded={isExpanded}
@@ -44,11 +44,11 @@ function SideBar({classes,isExpanded,location}) {
 
             {labels.map(label=>{
               return (
-                <Link to={`/label/${label}`} key={label}>
+                <Link to={`/Noted/label/${label}`} key={label}>
                      <TitledButton
                     label={label}
                     isExpanded={isExpanded}
-                    isActive={isActive(`/label/${label}`) ? true : false}
+                    isActive={isActive(`/Noted/label/${label}`) ? true : false}
                   >
                     <MdLabelOutline size="1.5em" />
                   </TitledButton>
@@ -63,21 +63,21 @@ function SideBar({classes,isExpanded,location}) {
           </div>
 
 
-          <Link to="/archive">
+          <Link to="/Noted/archive">
             <TitledButton
               label="Archive"
               isExpanded={isExpanded}
-              isActive={isActive('/archive') ? true : false}
+              isActive={isActive('/Noted/archive') ? true : false}
             >
               <FaArchive size="1.5em" />
             </TitledButton>
           </Link>
 
-          <Link to="/trash">
+          <Link to="/Noted/trash">
             <TitledButton
               label="Trash"
               isExpanded={isExpanded}
-              isActive={isActive('/trash') ? true : false}
+              isActive={isActive('/Noted/trash') ? true : false}
             >
               <BsTrash size="1.5em" />
             </TitledButton>
