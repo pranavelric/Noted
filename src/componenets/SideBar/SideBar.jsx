@@ -34,7 +34,7 @@ function SideBar({classes,isExpanded,location}) {
 
             <Link to="/reminders">
             <TitledButton
-              label="Rappels"
+              label="Reminders"
               isExpanded={isExpanded}
               isActive = {isActive('/reminders')?true:false}
               >
