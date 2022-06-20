@@ -1,0 +1,141 @@
+@use '../../../styles/scss/' as *;
+
+
+.noteform_root{
+    width: 100%;
+    max-width: 42rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.noteform{
+    border-radius: 0.75rem;
+    box-shadow: $shadow;
+    padding: 1rem 1rem;
+    border: 2px solid #e2e8f0;
+}
+
+.noteform_not_typing{
+    @include flex(center,flex-start);
+    color:$text-gray-600;
+    height: 2.5rem;
+}
+
+.noteform_label{
+    font-size: $small-font-size;
+    font-weight: 700;
+    flex-grow: 1;
+}
+.noteform_title_content{
+    overflow-wrap: anywhere;
+    position: relative;
+    @include flex(flex-start,flex-start);
+    margin-bottom: 0.5rem;
+}
+
+.noteform_title_label{
+    position: absolute;
+
+    width: 100%;
+    font-size: $small-font-size;
+    font-weight: 600;
+    color: $text-gray-600;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+.noteform_title{
+    z-index: 10;
+    flex-grow: 1;
+    margin-right: 0.25rem;
+    margin-top: 0.25rem;
+    font-size: $small-font-size;
+    font-weight: 600;
+    color: $text-gray-800;
+    height:max-content;
+    width: 95%;
+    padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+    outline: none;
+    border-radius: 4px;
+
+
+    box-shadow: $pressed-shadow;
+ 
+
+
+}
+
+
+.noteform_content_area{
+    overflow-wrap: anywhere;
+    position: relative;
+    font-size: $small-font-size;
+    margin-bottom: 1rem;
+}
+
+.noteform_content_label{
+    position: absolute;
+    height: 1.5rem;
+    width: 100%;
+    z-index: -1;
+    font-weight: 600;
+    color: $text-gray-600;
+    margin-top: 0.25rem;
+    margin-left: 0.5rem;
+}
+
+.noteform_content
+{
+
+    z-index: 100;
+    color: $text-gray-600;
+    margin-top: 0.25rem;
+    min-height: 4rem;
+    height: max-content;
+
+    font-size: $small-font-size;
+    font-weight: 600;
+    color: $text-gray-800;
+    padding: 0.25rem 0.25rem 0.25rem 0.5rem;
+    outline: none;
+    border-radius: 4px;
+
+
+    box-shadow: $pressed-shadow;
+ 
+}
+
+.noteform_labels{
+    margin: 1rem 0 0.5rem 0;
+}
+.noteform_label_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.noteform_label_li{
+    display: flex;
+    margin-right: 0.5rem;
+}
+
+
+
+
+.noteform_options{
+    @include flex(center,space-between);
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+
+.noteform_close_btn{
+    background-color: $bg-orange-300;
+    border-radius: 4px;
+    margin-left: auto;
+    transition: all;
+    transition-duration: 100ms;
+    &:hover{
+        cursor: pointer;
+        background-color: orange;
+        transform: scaleX(1.1) scaleY(1.1);   
+    }
+}
