@@ -1,0 +1,40 @@
+@use '../../styles/scss/' as *;
+
+
+.badge_root{
+        position: relative;
+}
+
+.badge_label{
+        padding: 0.25rem 0.5rem;
+        background-color: $bg-gray-300;
+        font-size: 0.75rem;
+        border-radius: 9999px;
+        overflow: hidden;
+}
+.badge_content{
+
+    @include flex(flex-start,flex-start);
+    position: absolute;
+    top: 0;
+    right:0;
+    height: 2rem;
+    background-color: $bg-gray-300;
+    border-radius: 9999px;
+
+    span{
+        width: 100%
+    }
+
+}
+.badge_button{
+
+    @include flex(center,center);
+    border-radius: 9999px;
+    height: 2rem;
+    width: 2rem;
+    &:hover{
+        background-color: $bg-gray-400;
+    }
+
+}
