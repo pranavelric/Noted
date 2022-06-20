@@ -1,0 +1,141 @@
+@use '../../styles/scss/' as *;
+
+
+
+
+.noteparam_root{
+    position: relative;
+}
+.noteparameter_options{
+    position: absolute;
+    z-index: 50;
+    right: 0;
+    width: max-content;
+    @include mobile{
+        left: 0;
+    }
+    background-color: white;
+
+    border: 1px solid $bg-gray-300;
+    border-radius: 5px;
+    box-shadow: $shadow;
+}
+.noteparameter_option_content{
+    @include flex(flex-start,flex-end);
+    flex-direction: column;
+    font-size: $small-font-size;
+    padding: 0.25rem 1rem;
+    background-color: white;
+}
+
+.noteparamater_label{
+    padding: 0.25rem 1rem;
+    border-radius: 10px;
+
+    &:hover{
+        background-color: $bg-gray-200;
+    }
+}
+
+
+.dropdown_label_options{
+    position: absolute;
+    top: 10;
+    width: max-content;
+    left: 0;
+    background-color: $bg-white;
+    border-radius: 5px;
+    border: 1px solid $bg-gray-300;
+    box-shadow: $shadow;
+
+}
+
+
+.dropdown_label_options_content{
+    @include flex(flex-start,flex-end);
+    flex-direction: column;
+    font-size: $small-font-size;
+    padding: 0.25rem 1rem;
+    background-color: white;
+}
+
+
+.note_searchbar{
+    font-size: 0.75rem;
+    color:$bg-gray-700;
+    padding: 0.5rem 1rem;
+
+    .note_searchbar_content{
+        @include flex(center,flex-start);
+    }
+    .flex-grow{
+        flex-grow: 1;
+    }
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow:  1px 2px 3px 0px rgb(0 0 0 / 10%), -3px -2px 14px 0 rgb(0 0 0 / 6%);
+    input{
+        flex: 1;
+        background-color: transparent;
+        border:none;
+        outline:none;
+    }
+}
+
+.noteparams_ul{
+    width: 100%;
+}
+
+.noteparams_search_list{
+    @include flex(center,flex-start);
+    padding: 0.25rem 1rem;
+    border-radius: 10px;
+    background-color: $bg-gray-100;
+    margin: 0.25rem 0;
+
+    &:hover{
+        background-color: $bg-gray-200;
+    }
+
+    .noteparam_search_result{
+        position: relative;
+        @include flex(center, center);
+        margin-right:0.5rem;
+        border-radius: 5rem;
+        height: 1rem;
+        width: 1rem;
+        border: 2px solid $bg-gray-600;
+    }
+
+    .flex-grow{
+        flex-grow: 1;
+    }
+}
+
+.noteprams_create_label{
+    @include flex(center,flex-start);
+    font-size: 0.75rem;
+    border-top-width: 1px;
+    border-color: $bg-gray-300;
+    padding: 0.25rem 1rem;
+    border-radius: 10px;
+    width: 100%;
+    
+    &:hover{
+        background-color: $bg-gray-200;
+        cursor: pointer;
+    }
+    .flex-grow{
+        flex-grow: 1;
+    }
+    .font-bold{
+        font-weight: 700;
+    }
+}
