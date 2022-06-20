@@ -11,7 +11,7 @@ import Logo from '../../UI/Logo/Logo';
 
 
 export default function Header(props) {
-    const {selectedNotes} = useContext(KeepContext);
+    const {selectedNotes, clearSelectedNotes} = useContext(KeepContext);
     return (
     <div className="header">
         <div className="header-content">
@@ -56,9 +56,9 @@ export default function Header(props) {
 
                 <div className="selected-notes">
                     <div className="text-gray-600">
-                    {/* <Button clicked={clearSelectedNotes}> */}
-                        {/* <FaTimes size="1.5em" />
-                    </Button> */}
+                    <Button clicked={clearSelectedNotes}>
+                        <FaTimes size="1.5em" />
+                    </Button>
                     <span className="ml-8 text-xl">
                         {selectedNotes.length > 1
                         ? `${selectedNotes.length} elements selected`
