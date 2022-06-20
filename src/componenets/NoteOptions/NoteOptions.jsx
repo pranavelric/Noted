@@ -12,6 +12,8 @@ import {
   import { MdArchive, MdUnarchive } from 'react-icons/md';
 import Button from '../../UI/Button/Button';
 import PaletteButton from '../../UI/PaletteButton/PaletteButton';
+import KeepContext from '../../context/KeepContext';
+import { useContext } from 'react';
 
   
 
@@ -27,14 +29,15 @@ export default function NoteOptions({  classes,
     deleted,
     unarchive,
     noteId,}) {
-        // delete restore note from context
         let spacingClass = `${large ? 'mr-4' : 'mr-2'}`;
-
+        const { hardDeleteNote, restoreNote } = useContext(KeepContext);
         const handleDeleteNote = ()=>{
+          hardDeleteNote(noteId);
             console.log('deleted');
         }
 
         const handleRestoreNote = ()=>{
+          restoreNote(noteId);
             console.log('Note restored');        
         }
 
