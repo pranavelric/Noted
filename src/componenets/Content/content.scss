@@ -1,0 +1,10 @@
+@use '../../styles/scss/' as *;
+
+.content-root{
+    flex-grow: 1;
+}
+
+.content{
+    padding: 2rem 0;
+    height: 100%;
+}
