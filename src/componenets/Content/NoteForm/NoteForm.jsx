@@ -73,7 +73,7 @@ export default function NoteForm({classes,isTyping,clicked,endTyping}) {
 
     const handleClickOutside = event=>{
         if(wrapperRef.current && !wrapperRef.current.contains(event.target)){
-            console.log(wrapperRef);
+  
             endTyping();
 
             if(title !==''|| content!==''){
