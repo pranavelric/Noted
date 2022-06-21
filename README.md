@@ -2,6 +2,9 @@
 
 Noted is a clone Application for Google Keep Note. It is used for creating notes and maintaining them using ReactJS.
 
+# Demo
+
+[View Live](https://pranavelric.dev/Noted/)
 
 
 ## Installation
